@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+
+
+option java_multiple_files = true;
+option java_package = "com.proto.StockRoomService";
+option java_outer_classname = "StockRoomServiceImpl";
+
+package com.proto.StockRoomService;
+
+//Service Definition
+service StockRoomService {
+  rpc readyOrder(OrderRequest) returns (ReadyResponse) {}
+  rpc stockSupply(StockSupplyRequest) returns (StockSupplyResponse){}
+  rpc stockAlert(AlertRequest) returns (stream AlertResponse) {}
+}
+
+//DEFINE THE MESSAGE
+/*ReadyOrder is a unary RPC. The OrderRequest message contains an order ID and a list of order items. The ReadyResponse response contains a boolean indicating whether the request
+ *  is ready.
+ */
+message OrderRequest {
+ string orderid = 1;
+ string clientname = 2;
+
+}
+
+message ReadyResponse {
+  string OrderStatus = 1;
+}
+
+//Stocksupply- Responsible to insert itens into stock. It should do the addition.
+message StockSupplyRequest {
+float currentQty = 1;
+float inputQty = 2;
+
+ enum Operation{
+
+  	ADDITION =0;
+  
+
+  }
+  Operation operation = 3;
+
+}
+
+message StockSupplyResponse {
+float result = 1;
+string mysupply = 2;
+
+}
+
+
+
+/*The StockAlert method is a streaming server RPC, which means that it sends and receives multiple messages. It receives an AlertRequest
+ * message containing an item ID and a minimum stock level. It then sends one or more AlertResponse messages containing
+ * an alert message for each time the stock level drops below the minimum.
+ */
+message AlertRequest {
+  string itemname = 1;
+  int32 minStockLevel = 2;
+}
+
+message AlertResponse {
+  string message = 1;
+}
+

@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.proto.salesService";
+option java_outer_classname = "DemoSalesServiceImpl";
+
+package salesService;
+
+//Service Definition
+service SalesService {
+rpc SendOrder(stream OrderRequest) returns (OrderResponse) {}
+rpc CheckPayment(PaymentRequest) returns (PaymentResponse) {}
+rpc Feedback(stream FeedbackRequest) returns (stream FeedbackResponse) {}
+}
+//Define the messages
+//RPC Client Streaming
+/*Server Streaming RPC: is a type of RPC where the client sends a request to the server and the server responds with a sequence
+ * of messages. The SendOrder method fits this pattern because the client sends a request and the server responds with a
+ *  confirmation message for each product in the order.
+ */
+message OrderRequest {
+string clientid = 1;
+string orderid = 2;
+string phonenumber = 3;
+double purchaseprice = 4;
+string productname = 5;
+int32 quantity = 6;
+
+}
+message OrderResponse {
+string Mymessage = 1;
+}
+
+//RPC Unary message
+/*Is a type of RPC that sends a single request from the client to the server and receives a single response from the server.
+ * The CheckPayment method fits this pattern because the client sends a payment request and expects a response from the server
+ * indicating whether the payment was authorized or not.
+ */
+message PaymentRequest {
+string orderid = 1;
+string clientname = 2;
+double paymenttotal = 3;
+}
+message PaymentResponse {
+string paymentstatus = 1;
+}
+
+//RPC Bidirectional Streaming.
+/*Bidirectional Streaming RPC: is a type of RPC in which the client and server send a sequence of messages to each other on an
+ * open channel. The Feedback method fits this pattern, as the client can send multiple feedback messages at once, and
+ * the server responds with a confirmation message for each received feedback message.
+ */
+message FeedbackRequest {
+string feedbackClient = 1;
+}
+message FeedbackResponse {
+string message = 1;
+}
