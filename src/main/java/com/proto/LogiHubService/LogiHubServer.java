@@ -29,6 +29,7 @@ public static void main(String[] args) {
 	
 LogiHubServer logihubservice = new LogiHubServer();
 
+//property
 Properties prop = logihubservice.getProperties();
 
 logihubservice.registerService1(prop);

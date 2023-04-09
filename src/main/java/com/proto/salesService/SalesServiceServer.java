@@ -14,6 +14,8 @@ import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 //import io.grpc.stub.StreamObserver;
 
+//just test
+
 
 public class SalesServiceServer extends SalesServiceImplBase {
 	// First we create a logger to show server side logs in the console. logger instance will be used to log different events at the server console.
