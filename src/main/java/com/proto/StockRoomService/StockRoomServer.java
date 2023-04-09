@@ -9,6 +9,8 @@ import com.proto.StockRoomService.StockSupplyRequest.Operation;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import io.grpc.Server;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //import io.grpc.stub.StreamObserver;
 
@@ -85,7 +87,7 @@ StockSupplyResponse reply = StockSupplyResponse .newBuilder().setResult(value).s
 @Override
 public void stockAlert(AlertRequest request, StreamObserver<AlertResponse> responseObserver) {
 	  String itemName = request.getItemname();
-	    int minStockLevel = request.getMinStockLevel();
+
 
 	    // TODO: implement logic to check stock levels and send alerts when necessary
 	    // For demonstration purposes, we will simply send a single alert message indicating that the stock level is low
@@ -93,54 +95,31 @@ public void stockAlert(AlertRequest request, StreamObserver<AlertResponse> respo
 
 	    // Send the alert message back to the client
 	    AlertResponse response = AlertResponse.newBuilder().setMessage(alertMessage).build();
-	    responseObserver.onNext(response);
+//	    responseObserver.onNext(response);
 
-	    int count = 0;
-	    String lastAlertMessage = "";
-	    // Continuously check the stock level and send additional alerts when necessary
-	    while (count < 5) {
+
+            Map<String, Integer> stockLevels = new HashMap<>();
+	    stockLevels.put("Losartana", 10);
+	    
+            for(int i =0; i<= 5 ; i++) {
 	        // TODO: implement logic to check stock levels and send alerts when necessary
-	        Map<String, Integer> stockLevels = new HashMap<>();
-	        stockLevels.put("Losartana ", 10);
-	       
-	        for (String productName : stockLevels.keySet()) {
-	            int currentStockLevel = stockLevels.get(productName);
-	            if (currentStockLevel < minStockLevel) {
-	                // The current stock level is below the minimum
-	                String message = "Low stock for item: " + productName;
-	                if (!message.equals(lastAlertMessage)) {
-	                    // Only send the message if it's different from the last one sent
-	                    AlertResponse alert = AlertResponse.newBuilder().setMessage(message).build();
-	                    responseObserver.onNext(alert);
-	                    lastAlertMessage = message;
-	                    count = 1;
-	                } else {
-	                    // Increment the count if the message is the same as the last one sent
-	                    count++;
-	                }
-	            } else {
-	                // The current stock level is above or equal to the minimum
-	                System.out.println("Stock level is sufficient for item => " + productName);
-	            }
-	        }
+	    
+                // The current stock level is below the minimum
+                System.out.println("Low stock for item: " + itemName);
+                System.out.println(i);
+                
+                responseObserver.onNext(response);
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(StockRoomServer.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
 
-
-	        // Wait for a short period of time before checking the stock level again
-	        try {
-	            Thread.sleep(1000); // Sleep for 1 second
-	        } catch (InterruptedException e) {
-	            // Handle any errors that occur during the sleep period
-	            e.printStackTrace();
-	        }
+                }
+            
+                responseObserver.onCompleted();
+	      
 	    }
-	}
+	
 }
-
-
-
-
-
-
-
-
-

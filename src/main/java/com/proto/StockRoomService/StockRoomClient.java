@@ -1,7 +1,5 @@
 package com.proto.StockRoomService;
 
-
-
 import com.proto.StockRoomService.StockRoomServiceGrpc.StockRoomServiceBlockingStub;
 import com.proto.StockRoomService.StockRoomServiceGrpc.StockRoomServiceStub;
 
@@ -29,10 +27,12 @@ public class StockRoomClient {
 	
 	
 		readyOrder(null, blockingStub);
-		
-		stockSupply(0, blockingStub);
-		
-		StockAlert(blockingStub);
+                
+                StockAlert(blockingStub);
+                
+                stockSupply(0, blockingStub);
+                
+                
 		
 	}
 
@@ -103,18 +103,5 @@ public static void StockAlert(StockRoomServiceBlockingStub blockingStub)  {
         
         
     }
-   
-        
+      
 }
-
-
-					
-				
-
-
-
-
-		
-	
-	
-

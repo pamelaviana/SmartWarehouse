@@ -89,8 +89,8 @@ public class SalesServiceServer extends SalesServiceImplBase {
 						 // Here, response is sent once the client is done with sending the stream.
 						  OrderResponse res = OrderResponse.newBuilder().setMymessage(receipt).build();
 				          responseObserver.onNext(res);
-				          responseObserver.onCompleted();
-							responseObserver.onCompleted();
+				          //responseObserver.onCompleted();
+							//responseObserver.onCompleted();
 							
 							System.out.println("===============================================================");
 					}
