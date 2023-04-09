@@ -56,8 +56,9 @@ public static void stockSupply(int currentQty,StockRoomServiceBlockingStub bloki
 
 	StockSupplyResponse response = blockingStub.stockSupply(req);
 
-	System.out.println("Cheking quantity of Losrtana after insert 220units into stock => " + response.getResult() + " units into stock " + response.getMysupply());
 	System.out.println("============================================================================");
+	System.out.println("Cheking quantity of Losartana after insert 220units into stock => " + response.getResult() + " units into stock " + response.getMysupply());
+	
 	
 }
 
@@ -86,7 +87,7 @@ public static void StockAlert(StockRoomServiceBlockingStub blockingStub)  {
 
             @Override
             public void onCompleted() {
-                System.out.println("Streaming completed"+count+"alerta");
+                System.out.println("Streaming completed "+count+" alerta");
             }
 		};
 		asyncStub.stockAlert(request, responseObserver);
@@ -95,7 +96,7 @@ public static void StockAlert(StockRoomServiceBlockingStub blockingStub)  {
         
         // Wait for a short period of time before closing the channel
         try {
-            Thread.sleep(30000); // Sleep for 10 seconds
+            Thread.sleep(20000); 
         } catch (InterruptedException e) {
             // Handle any errors that occur during the sleep period
             e.printStackTrace();

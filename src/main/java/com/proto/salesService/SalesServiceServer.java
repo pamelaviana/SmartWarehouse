@@ -92,7 +92,7 @@ public class SalesServiceServer extends SalesServiceImplBase {
 				          //responseObserver.onCompleted();
 							//responseObserver.onCompleted();
 							
-							System.out.println("===============================================================");
+							//System.out.println("===============================================================");
 					}
 				};
 			}
@@ -151,6 +151,7 @@ public class SalesServiceServer extends SalesServiceImplBase {
 			
 				     
 		              responseObserver.onNext(feedbackresponse);
+		             
 		        }
 				
 					
@@ -169,7 +170,9 @@ public class SalesServiceServer extends SalesServiceImplBase {
 			
 		};
 		 return requestObserver;
+		 
 	}
+	
 }
 	
 
