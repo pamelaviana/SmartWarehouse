@@ -23,8 +23,6 @@ import io.grpc.stub.StreamObserver;
 //Extend the ImplBase imported class here. It is an Interface file with required rpc methods
 public class LogiHubServer extends LogiHubServiceImplBase {
 
-//private static final Logger logger = Logger.getLogger(LogiHubServer.class.getName());
-//OTE: THIS LOGIC WILL BE SAME FOR ALL THE TYPES OF SERVICES
 public static void main(String[] args) {
 	
 LogiHubServer logihubservice = new LogiHubServer();
@@ -34,8 +32,8 @@ Properties prop = logihubservice.getProperties();
 
 logihubservice.registerService1(prop);
 
-int port = 50054;
-//int port = Integer.valueOf( prop.getProperty("service_port") );// #.50054;
+//int port = 50054;
+int port = Integer.valueOf( prop.getProperty("service_port") );// #.50054;
 
 try {
 Server server = ServerBuilder.forPort(port) // Port is defined in line 34
