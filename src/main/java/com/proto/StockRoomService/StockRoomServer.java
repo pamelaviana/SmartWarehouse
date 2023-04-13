@@ -1,14 +1,15 @@
 package com.proto.StockRoomService;
-import java.io.IOException;
+
+
 import java.util.HashMap;
 import java.util.Map;
 
 import com.proto.StockRoomService.StockRoomServiceGrpc.StockRoomServiceImplBase;
 import com.proto.StockRoomService.StockSupplyRequest.Operation;
 
-import io.grpc.ServerBuilder;
+
 import io.grpc.stub.StreamObserver;
-import io.grpc.Server;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,25 +19,7 @@ import java.util.logging.Logger;
 
 
 public class StockRoomServer extends StockRoomServiceImplBase {
-public static void main(String[]args) {
-//instance of salesService
-StockRoomServer stockRoom = new StockRoomServer();
-int port = 50052;
 
-
-Server server;
-
-try {
-server = ServerBuilder.forPort(port).addService(stockRoom ).build().start();
-System.out.println("StockRoom Server started...");
-server.awaitTermination(); 
-} catch (IOException e) {
-// TODO Auto-generated catch block
-e.printStackTrace();
-}catch (InterruptedException e) {
-e.printStackTrace();
-} 
-}
 
 
 @Override

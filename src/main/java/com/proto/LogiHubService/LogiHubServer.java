@@ -55,6 +55,9 @@ e.printStackTrace();
 e.printStackTrace();
 }
 }
+
+
+
 private Properties getProperties() {
 Properties prop = null; 
 try (InputStream input = new FileInputStream("src/main/resources/LogiHubService.properties")) {
@@ -75,6 +78,8 @@ ex.printStackTrace();
 }
 return prop;
 }
+
+
 private void registerService1(Properties prop) {
 
 	try {

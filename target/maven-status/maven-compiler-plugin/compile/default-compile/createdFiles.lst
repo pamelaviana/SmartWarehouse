@@ -8,7 +8,9 @@ com/proto/StockRoomService/ReadyResponse.class
 com/proto/salesService/FeedbackRequest$1.class
 com/proto/salesService/SalesServiceClient$2.class
 com/proto/LogiHubService/ReturnRequestOrBuilder.class
+com/proto/salesService/SalesRegistration.class
 com/proto/salesService/FeedbackResponse$Builder.class
+com/proto/StockRoomService/StockRoomRegistration.class
 com/proto/StockRoomService/AlertRequestOrBuilder.class
 com/proto/LogiHubService/FailureRequestOrBuilder.class
 com/proto/StockRoomService/StockSupplyRequest$Operation$1.class
