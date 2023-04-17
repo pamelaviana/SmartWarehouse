@@ -1,28 +1,21 @@
 syntax = "proto3";
-
-/* This options is used to generate Java code from the file . proto, defining the Java package, the name of the Java external class and allowing
- * the generation of separate Java files for each message and service.
- */
 option java_multiple_files = true;
 option java_package = "com.proto.LogiHubService";
 option java_outer_classname = "LogiHubServiceImpl";
 
 package logi_hub;
-
 //Service Definition
-
 service LogiHubService {
   // Method to search for the status of an order
   rpc DeliveryStatus(StatusRequest) returns (StatusResponse) {}
-
   // Method to inform the warehouse about non-delivery due to unforeseen events
   rpc FailureOrder(FailureRequest) returns (FailureResponse) {}
-
   // Method to request the return of an item
   rpc ReturnOrder(ReturnRequest) returns (ReturnResponse) {}
 }
 
 //declare the message---All message are Unary rpc.
+//DeliveryStatus- Unar rpc
 message StatusRequest {
  string orderid = 1;
  string clientname = 2;
@@ -33,7 +26,7 @@ message StatusResponse {
   string Mystatus = 1;
 }
 
-//FailureOrder
+//FailureOrder- Unary rpc
 message FailureRequest {
   string orderid = 1;
   string itemname =2;
@@ -45,7 +38,7 @@ message FailureResponse {
   string confirmation = 1;
 }
 
-//ReturnOrder
+//ReturnOrder- Unaryrpc
 message ReturnRequest {
   string orderid = 1;
   string clientname = 2;

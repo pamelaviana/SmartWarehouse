@@ -5,7 +5,7 @@ package com.proto.LogiHubService;
 
 /**
  * <pre>
- *FailureOrder
+ *FailureOrder- Unary rpc
  * </pre>
  *
  * Protobuf type {@code logi_hub.FailureRequest}
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *FailureOrder
+   *FailureOrder- Unary rpc
    * </pre>
    *
    * Protobuf type {@code logi_hub.FailureRequest}

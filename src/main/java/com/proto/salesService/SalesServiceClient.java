@@ -1,7 +1,6 @@
 package com.proto.salesService;
 
 import java.util.Arrays;
-
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -11,226 +10,172 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
-
-//import com.proto.salesService.SalesServiceGrpc.SalesServiceBlockingStub;
-
-
-//import io.grpc.StatusRuntimeException;
-
 public class SalesServiceClient {
-	
-    // First we create a logger to show client side logs in the console. logger instance will be used to log different events at the client console.
-    // This is optional. Could be used if needed.
-    //private static  Logger logger = Logger.getLogger(SalesServiceClient.class.getName());
 
-    // Creating stubs for establishing the connection with server.
-    // Blocking stub
-    
-    private static SalesServiceGrpc.SalesServiceBlockingStub blockingStub;
-    // Asynch stub
-    private static SalesServiceGrpc.SalesServiceStub asyncStub;
+	// stubs: a stub blocking (blocker) and another async stub (asynchronous) that
+	// are used to make remote procedure calls to the server.
+	private static SalesServiceGrpc.SalesServiceBlockingStub blockingStub;
+	// Asynch stub
+	private static SalesServiceGrpc.SalesServiceStub asyncStub;
 
-    // The main method will have the logic for client.
-    public static void main(String[] args) throws Exception {
-				
-    // First a channel is being created to the server from client. Here, we provide the server name (localhost) and port (50053).
-    // As it is a local demo of GRPC, we can have non-secured channel (usePlaintext).
-		
-    ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053).usePlaintext().build();
+	// The main method will have the logic for client.
+	public static void main(String[] args) throws Exception {
 
-    //stubs -- generate from proto
-    blockingStub = SalesServiceGrpc.newBlockingStub(channel);
-    asyncStub = SalesServiceGrpc.newStub(channel);
+		// Creates a communication channel for the server at address "localhost" and
+		// port 50053.
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50053).usePlaintext().build();
 
+		// stubs -- generate from proto
+		blockingStub = SalesServiceGrpc.newBlockingStub(channel);
+		asyncStub = SalesServiceGrpc.newStub(channel);
 
-    // clientstreaming method call
-    SendOrder();
+		// method call
+		SendOrder();
 
-    checkPayment();
-		
-    feedback();
-		
-		
-    // Closing the channel once message has been passed.
-    channel.shutdown();
-		
-		
-}
-			
-//Client stream 
+		checkPayment();
 
-    public static void SendOrder() {
-        // Handling the stream for client using onNext (logic for handling each message in stream), onError, onCompleted (logic will be executed after the completion of stream)
-        StreamObserver<OrderResponse> responseObserver = new StreamObserver<OrderResponse>() {
+		feedback();
 
-                @Override
-                public void onNext(OrderResponse value) {
-                        System.out.println("receiving message response: " + value.getMymessage());
-                }
+		// Closing the channel once message has been passed.
+		channel.shutdown();
+	}
 
-                @Override
-                public void onError(Throwable t) {
-                        // TODO Auto-generated method stub
+	// Client stream
+	public static void SendOrder() {
+		// Declares a StreamObserver instance that receives the response from the server
+		// when the client sends a message.
+		StreamObserver<OrderResponse> responseObserver = new StreamObserver<OrderResponse>() {
 
-                }
+			@Override
+			public void onNext(OrderResponse value) {
+				System.out.println("receiving message response: " + value.getMymessage());
+			}
 
-                @Override
-                public void onCompleted() {
-                        System.out.println("completed ");
+			@Override
+			public void onError(Throwable t) {
+				// TODO Auto-generated method stub
 
-                }
+			}
 
-        };
+			@Override
+			public void onCompleted() {
+				System.out.println("completed ");
 
-        // Here, we are calling the Remote sendOrder method. Using onNext, client sends a stream of messages.
-        StreamObserver<OrderRequest> requestObserver = asyncStub.sendOrder(responseObserver);
+			}
 
-        try {
+		};
 
-                requestObserver.onNext(OrderRequest.newBuilder() .setClientid("8004")
-              .setOrderid("8791")
-              .setPhonenumber("87 4394537")
-              .setPurchaseprice(12.96)
-              .setProductname("Lorsartan")
-              .setQuantity(5)
-              .build());
+		// Here, we are calling the Remote sendOrder method. Using onNext, client sends
+		// a stream of messages.
+		StreamObserver<OrderRequest> requestObserver = asyncStub.sendOrder(responseObserver);
 
+		try {
+			// Sends a message of type OrderRequest to the server.
+			requestObserver.onNext(
+					OrderRequest.newBuilder().setClientid("8004").setOrderid("8791").setPhonenumber("87 4394537")
+							.setPurchaseprice(12.96).setProductname("Lorsartan").setQuantity(5).build());
 
-                requestObserver.onNext(OrderRequest.newBuilder().setClientid("8005")
-              .setOrderid("8792")
-              .setPhonenumber("87 4364487")
-              .setPurchaseprice(11.85)
-              .setProductname("Zinco")
-              .setQuantity(2)
-              .build());
+			requestObserver.onNext(
+					OrderRequest.newBuilder().setClientid("8005").setOrderid("8792").setPhonenumber("87 4364487")
+							.setPurchaseprice(11.85).setProductname("Zinco").setQuantity(2).build());
 
+			requestObserver.onNext(
+					OrderRequest.newBuilder().setClientid("8006").setOrderid("8793").setPhonenumber("83 4368976")
+							.setPurchaseprice(15.55).setProductname("Vitamin C").setQuantity(1).build());
 
-                requestObserver.onNext(OrderRequest.newBuilder() .setClientid("8006")
-              .setOrderid("8793")
-              .setPhonenumber("83 4368976")
-              .setPurchaseprice(15.55)
-              .setProductname("Vitamin C")
-              .setQuantity(1)
-              .build());
+			requestObserver.onNext(
+					OrderRequest.newBuilder().setClientid("8007").setOrderid("8794").setPhonenumber("82 2396535")
+							.setPurchaseprice(1.99).setProductname("Magnesium").setQuantity(1).build());
 
+			System.out.println("Sending purchases...");
 
-                requestObserver.onNext(OrderRequest.newBuilder().setClientid("8007")
-              .setOrderid("8794")
-              .setPhonenumber("82 2396535")
-              .setPurchaseprice(1.99)
-              .setProductname("Magnesium")
-              .setQuantity(1)
-              .build());
+			// Informs the server that the client has finished sending messages.
+			requestObserver.onCompleted();
 
+			// Sleep for a bit before sending the next one.
+			Thread.sleep(new Random().nextInt(1000) + 500);
 
-                System.out.println("Sending purchases...");
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 
+		}
 
+	}
 
+	private static void checkPayment() {
+		// Creates a PaymentRequest to verify the payment of the request and receives
+		// the response from the server.
+		PaymentRequest paymentrequest = PaymentRequest.newBuilder().setOrderid("8791").setClientname("Alice")
+				.setPaymenttotal(12.96).build();
 
-    // Mark the end of requests
-                requestObserver.onCompleted();
+		PaymentResponse paymentresponse = blockingStub.checkPayment(paymentrequest);
+		System.out.println(" \n\nSending order for payment to be analyzed\n" + paymentresponse.getPaymentstatus());
 
+	}
 
-                // Sleep for a bit before sending the next one.
-                Thread.sleep(new Random().nextInt(1000) + 500);
+	public static void feedback() {
+		// Declares a StreamObserver instance that receives the response from the server
+		// when the client sends a comment.
+		StreamObserver<FeedbackResponse> responseObserver = new StreamObserver<FeedbackResponse>() {
 
+			@Override
+			public void onNext(FeedbackResponse value) {
 
-                 System.out.println("==================================================================\n" );
+				System.out.println("Response from server: " + value.getMessage());
+			}
 
+			@Override
+			public void onError(Throwable t) {
+				// TODO Auto-generated method stub
 
+			}
 
+			@Override
+			public void onCompleted() {
+				// TODO Auto-generated method stub
+				System.out.println("server completed");
+			}
+		};
 
-        } catch (RuntimeException e) {
-                e.printStackTrace();
-        } catch (InterruptedException e) {			
-                e.printStackTrace();
-        }
+		// Send a message to the server.
+		StreamObserver<FeedbackRequest> requestObserver = asyncStub.feedback(responseObserver);
 
+		// CountDownLatch is used to make sure that a task waits for other threads
+		// before it starts.
+		CountDownLatch latch = new CountDownLatch(1);
 
-        }
-    
-    
-    private static void checkPayment() {
-        PaymentRequest paymentrequest = PaymentRequest.newBuilder()
-            .setOrderid("8791")
-            .setClientname("Alice")
-            .setPaymenttotal(12.96)
-            .build();
+		try {//list to store all feedback
+			Arrays.asList("The product quality is excellent!", "The delivery time was very fast.",
+					"The price was fair and the service was worth it.").forEach(comments -> {
+						System.out.println("\n\nSending feedback: " + comments);
+						requestObserver.onNext(FeedbackRequest.newBuilder()
 
-            PaymentResponse paymentresponse =  blockingStub. checkPayment(paymentrequest);
-            System.out.println(" Sending order for payment to be analyzed\n\n" + paymentresponse.getPaymentstatus());
-            System.out.println("==================================================================\n" );
-    }
-			
+								.setFeedbackClient(comments).build());
 
-    public static void feedback() {
-        StreamObserver<FeedbackResponse> responseObserver = new StreamObserver<FeedbackResponse>() {
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
 
-        @Override
-        public void onNext(FeedbackResponse value){
+						}
+					}
 
-                System.out.println("Response from server: " + value.getMessage ());
-        }
+			);
 
-        @Override
-        public void onError(Throwable t) {
-                // TODO Auto-generated method stub
+			requestObserver.onCompleted();// Informs the server that the client has finished sending messages
 
-        }
+			try {
+				latch.await(3L, TimeUnit.SECONDS);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
-        @Override
-        public void onCompleted() {
-                // TODO Auto-generated method stub
-                System.out.println("server completed");
-        }
-    };
+		} catch (RuntimeException e) {
+			System.out.println(" Handling Exceptions");
+			e.printStackTrace();
+		}
+	}
 
-
-    StreamObserver<FeedbackRequest> requestObserver = asyncStub.feedback(responseObserver);
-
-     //CountDownLatch is used to make sure that a task waits for other threads before it starts.
-    CountDownLatch latch = new CountDownLatch(1);
-
-    try {
-        Arrays.asList("The product quality is excellent!" , "The delivery time was very fast.", "The price was fair and the service was worth it.",
-        "beta-adrenergic" ).forEach(
-            comments ->{
-                System.out.println("Sending: " + comments);
-                requestObserver.onNext(FeedbackRequest.newBuilder()
-                //set the blood pressure and the treatment
-                .setFeedbackClient(comments)
-                .build());
-
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    System.out.println("==================================================================\n" );
-                }
-            }
-
-        );
-
-        requestObserver.onCompleted();
-
-        try {
-            latch.await(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
-        }catch(RuntimeException e) {
-            System.out.println(" Handling Exceptions");
-            e.printStackTrace();
-        }
-    }
-    
-    
-    
-    
-    
-
- 
 }

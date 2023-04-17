@@ -15,10 +15,10 @@ public final class StockRoomServiceImpl {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_proto_StockRoomService_OrderRequest_descriptor;
+    internal_static_com_proto_StockRoomService_OrderRequestt_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_proto_StockRoomService_OrderRequest_fieldAccessorTable;
+      internal_static_com_proto_StockRoomService_OrderRequestt_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_proto_StockRoomService_ReadyResponse_descriptor;
   static final 
@@ -54,27 +54,27 @@ public final class StockRoomServiceImpl {
   static {
     java.lang.String[] descriptorData = {
       "\n\026StockRoomService.proto\022\032com.proto.Stoc" +
-      "kRoomService\"3\n\014OrderRequest\022\017\n\007orderid\030" +
-      "\001 \001(\t\022\022\n\nclientname\030\002 \001(\t\"$\n\rReadyRespon" +
-      "se\022\023\n\013OrderStatus\030\001 \001(\t\"\242\001\n\022StockSupplyR" +
-      "equest\022\022\n\ncurrentQty\030\001 \001(\002\022\020\n\010inputQty\030\002" +
-      " \001(\002\022K\n\toperation\030\003 \001(\01628.com.proto.Stoc" +
-      "kRoomService.StockSupplyRequest.Operatio" +
-      "n\"\031\n\tOperation\022\014\n\010ADDITION\020\000\"7\n\023StockSup" +
-      "plyResponse\022\016\n\006result\030\001 \001(\002\022\020\n\010mysupply\030" +
-      "\002 \001(\t\"7\n\014AlertRequest\022\020\n\010itemname\030\001 \001(\t\022" +
-      "\025\n\rminStockLevel\030\002 \001(\005\" \n\rAlertResponse\022" +
-      "\017\n\007message\030\001 \001(\t2\320\002\n\020StockRoomService\022c\n" +
-      "\nreadyOrder\022(.com.proto.StockRoomService" +
-      ".OrderRequest\032).com.proto.StockRoomServi" +
-      "ce.ReadyResponse\"\000\022p\n\013stockSupply\022..com." +
-      "proto.StockRoomService.StockSupplyReques" +
-      "t\032/.com.proto.StockRoomService.StockSupp" +
-      "lyResponse\"\000\022e\n\nstockAlert\022(.com.proto.S" +
-      "tockRoomService.AlertRequest\032).com.proto" +
-      ".StockRoomService.AlertResponse\"\0000\001B4\n\032c" +
-      "om.proto.StockRoomServiceB\024StockRoomServ" +
-      "iceImplP\001b\006proto3"
+      "kRoomService\"4\n\rOrderRequestt\022\017\n\007orderid" +
+      "\030\001 \001(\t\022\022\n\nclientname\030\002 \001(\t\"$\n\rReadyRespo" +
+      "nse\022\023\n\013OrderStatus\030\001 \001(\t\"\242\001\n\022StockSupply" +
+      "Request\022\022\n\ncurrentQty\030\001 \001(\002\022\020\n\010inputQty\030" +
+      "\002 \001(\002\022K\n\toperation\030\003 \001(\01628.com.proto.Sto" +
+      "ckRoomService.StockSupplyRequest.Operati" +
+      "on\"\031\n\tOperation\022\014\n\010ADDITION\020\000\"7\n\023StockSu" +
+      "pplyResponse\022\016\n\006result\030\001 \001(\002\022\020\n\010mysupply" +
+      "\030\002 \001(\t\"7\n\014AlertRequest\022\020\n\010itemname\030\001 \001(\t" +
+      "\022\025\n\rminStockLevel\030\002 \001(\005\" \n\rAlertResponse" +
+      "\022\017\n\007message\030\001 \001(\t2\321\002\n\020StockRoomService\022d" +
+      "\n\nreadyOrder\022).com.proto.StockRoomServic" +
+      "e.OrderRequestt\032).com.proto.StockRoomSer" +
+      "vice.ReadyResponse\"\000\022p\n\013stockSupply\022..co" +
+      "m.proto.StockRoomService.StockSupplyRequ" +
+      "est\032/.com.proto.StockRoomService.StockSu" +
+      "pplyResponse\"\000\022e\n\nstockAlert\022(.com.proto" +
+      ".StockRoomService.AlertRequest\032).com.pro" +
+      "to.StockRoomService.AlertResponse\"\0000\001B4\n" +
+      "\032com.proto.StockRoomServiceB\024StockRoomSe" +
+      "rviceImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -88,11 +88,11 @@ public final class StockRoomServiceImpl {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_com_proto_StockRoomService_OrderRequest_descriptor =
+    internal_static_com_proto_StockRoomService_OrderRequestt_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_com_proto_StockRoomService_OrderRequest_fieldAccessorTable = new
+    internal_static_com_proto_StockRoomService_OrderRequestt_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_proto_StockRoomService_OrderRequest_descriptor,
+        internal_static_com_proto_StockRoomService_OrderRequestt_descriptor,
         new java.lang.String[] { "Orderid", "Clientname", });
     internal_static_com_proto_StockRoomService_ReadyResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);

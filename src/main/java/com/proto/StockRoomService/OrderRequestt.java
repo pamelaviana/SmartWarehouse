@@ -9,18 +9,18 @@ package com.proto.StockRoomService;
  *Unary rpc
  * </pre>
  *
- * Protobuf type {@code com.proto.StockRoomService.OrderRequest}
+ * Protobuf type {@code com.proto.StockRoomService.OrderRequestt}
  */
-public  final class OrderRequest extends
+public  final class OrderRequestt extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:com.proto.StockRoomService.OrderRequest)
-    OrderRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:com.proto.StockRoomService.OrderRequestt)
+    OrderRequesttOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use OrderRequest.newBuilder() to construct.
-  private OrderRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use OrderRequestt.newBuilder() to construct.
+  private OrderRequestt(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private OrderRequest() {
+  private OrderRequestt() {
     orderid_ = "";
     clientname_ = "";
   }
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private OrderRequest(
+  private OrderRequestt(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
       internalGetFieldAccessorTable() {
     return com.proto.StockRoomService.StockRoomServiceImpl.internal_static_com_proto_StockRoomService_OrderRequestt_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.proto.StockRoomService.OrderRequest.class, com.proto.StockRoomService.OrderRequest.Builder.class);
+            com.proto.StockRoomService.OrderRequestt.class, com.proto.StockRoomService.OrderRequestt.Builder.class);
   }
 
   public static final int ORDERID_FIELD_NUMBER = 1;
@@ -206,10 +206,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.proto.StockRoomService.OrderRequest)) {
+    if (!(obj instanceof com.proto.StockRoomService.OrderRequestt)) {
       return super.equals(obj);
     }
-    com.proto.StockRoomService.OrderRequest other = (com.proto.StockRoomService.OrderRequest) obj;
+    com.proto.StockRoomService.OrderRequestt other = (com.proto.StockRoomService.OrderRequestt) obj;
 
     boolean result = true;
     result = result && getOrderid()
@@ -236,69 +236,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(byte[] data)
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(java.io.InputStream input)
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.StockRoomService.OrderRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.proto.StockRoomService.OrderRequestt parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.proto.StockRoomService.OrderRequest parseDelimitedFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.proto.StockRoomService.OrderRequest parseFrom(
+  public static com.proto.StockRoomService.OrderRequestt parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -311,7 +311,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.proto.StockRoomService.OrderRequest prototype) {
+  public static Builder newBuilder(com.proto.StockRoomService.OrderRequestt prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -332,12 +332,12 @@ private static final long serialVersionUID = 0L;
    *Unary rpc
    * </pre>
    *
-   * Protobuf type {@code com.proto.StockRoomService.OrderRequest}
+   * Protobuf type {@code com.proto.StockRoomService.OrderRequestt}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:com.proto.StockRoomService.OrderRequest)
-      com.proto.StockRoomService.OrderRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:com.proto.StockRoomService.OrderRequestt)
+      com.proto.StockRoomService.OrderRequesttOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.proto.StockRoomService.StockRoomServiceImpl.internal_static_com_proto_StockRoomService_OrderRequestt_descriptor;
@@ -348,10 +348,10 @@ private static final long serialVersionUID = 0L;
         internalGetFieldAccessorTable() {
       return com.proto.StockRoomService.StockRoomServiceImpl.internal_static_com_proto_StockRoomService_OrderRequestt_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.proto.StockRoomService.OrderRequest.class, com.proto.StockRoomService.OrderRequest.Builder.class);
+              com.proto.StockRoomService.OrderRequestt.class, com.proto.StockRoomService.OrderRequestt.Builder.class);
     }
 
-    // Construct using com.proto.StockRoomService.OrderRequest.newBuilder()
+    // Construct using com.proto.StockRoomService.OrderRequestt.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -383,13 +383,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.StockRoomService.OrderRequest getDefaultInstanceForType() {
-      return com.proto.StockRoomService.OrderRequest.getDefaultInstance();
+    public com.proto.StockRoomService.OrderRequestt getDefaultInstanceForType() {
+      return com.proto.StockRoomService.OrderRequestt.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.proto.StockRoomService.OrderRequest build() {
-      com.proto.StockRoomService.OrderRequest result = buildPartial();
+    public com.proto.StockRoomService.OrderRequestt build() {
+      com.proto.StockRoomService.OrderRequestt result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -397,8 +397,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.proto.StockRoomService.OrderRequest buildPartial() {
-      com.proto.StockRoomService.OrderRequest result = new com.proto.StockRoomService.OrderRequest(this);
+    public com.proto.StockRoomService.OrderRequestt buildPartial() {
+      com.proto.StockRoomService.OrderRequestt result = new com.proto.StockRoomService.OrderRequestt(this);
       result.orderid_ = orderid_;
       result.clientname_ = clientname_;
       onBuilt();
@@ -439,16 +439,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.proto.StockRoomService.OrderRequest) {
-        return mergeFrom((com.proto.StockRoomService.OrderRequest)other);
+      if (other instanceof com.proto.StockRoomService.OrderRequestt) {
+        return mergeFrom((com.proto.StockRoomService.OrderRequestt)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.proto.StockRoomService.OrderRequest other) {
-      if (other == com.proto.StockRoomService.OrderRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.proto.StockRoomService.OrderRequestt other) {
+      if (other == com.proto.StockRoomService.OrderRequestt.getDefaultInstance()) return this;
       if (!other.getOrderid().isEmpty()) {
         orderid_ = other.orderid_;
         onChanged();
@@ -472,11 +472,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.proto.StockRoomService.OrderRequest parsedMessage = null;
+      com.proto.StockRoomService.OrderRequestt parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.proto.StockRoomService.OrderRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.proto.StockRoomService.OrderRequestt) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -636,41 +636,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:com.proto.StockRoomService.OrderRequest)
+    // @@protoc_insertion_point(builder_scope:com.proto.StockRoomService.OrderRequestt)
   }
 
-  // @@protoc_insertion_point(class_scope:com.proto.StockRoomService.OrderRequest)
-  private static final com.proto.StockRoomService.OrderRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:com.proto.StockRoomService.OrderRequestt)
+  private static final com.proto.StockRoomService.OrderRequestt DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.proto.StockRoomService.OrderRequest();
+    DEFAULT_INSTANCE = new com.proto.StockRoomService.OrderRequestt();
   }
 
-  public static com.proto.StockRoomService.OrderRequest getDefaultInstance() {
+  public static com.proto.StockRoomService.OrderRequestt getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OrderRequest>
-      PARSER = new com.google.protobuf.AbstractParser<OrderRequest>() {
+  private static final com.google.protobuf.Parser<OrderRequestt>
+      PARSER = new com.google.protobuf.AbstractParser<OrderRequestt>() {
     @java.lang.Override
-    public OrderRequest parsePartialFrom(
+    public OrderRequestt parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OrderRequest(input, extensionRegistry);
+      return new OrderRequestt(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<OrderRequest> parser() {
+  public static com.google.protobuf.Parser<OrderRequestt> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<OrderRequest> getParserForType() {
+  public com.google.protobuf.Parser<OrderRequestt> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.proto.StockRoomService.OrderRequest getDefaultInstanceForType() {
+  public com.proto.StockRoomService.OrderRequestt getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

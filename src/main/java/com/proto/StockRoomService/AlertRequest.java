@@ -5,9 +5,7 @@ package com.proto.StockRoomService;
 
 /**
  * <pre>
- *The StockAlert method is a streaming server RPC, which means that it sends and receives multiple messages. It receives an AlertRequest
- * message containing an item ID and a minimum stock level. It then sends one or more AlertResponse messages containing
- * an alert message for each time the stock level drops below the minimum.
+ *Server stream rpc
  * </pre>
  *
  * Protobuf type {@code com.proto.StockRoomService.AlertRequest}
@@ -304,9 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *The StockAlert method is a streaming server RPC, which means that it sends and receives multiple messages. It receives an AlertRequest
-   * message containing an item ID and a minimum stock level. It then sends one or more AlertResponse messages containing
-   * an alert message for each time the stock level drops below the minimum.
+   *Server stream rpc
    * </pre>
    *
    * Protobuf type {@code com.proto.StockRoomService.AlertRequest}

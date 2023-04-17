@@ -5,7 +5,7 @@ package com.proto.StockRoomService;
 
 /**
  * <pre>
- *Stocksupply- Responsible to insert itens into stock. It should do the addition.
+ *Unary rpc
  * </pre>
  *
  * Protobuf type {@code com.proto.StockRoomService.StockSupplyRequest}
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *Stocksupply- Responsible to insert itens into stock. It should do the addition.
+   *Unary rpc
    * </pre>
    *
    * Protobuf type {@code com.proto.StockRoomService.StockSupplyRequest}

@@ -12,11 +12,11 @@ import io.grpc.StatusRuntimeException;
 public class LogiHubClient {
 	public static void main(String[]args) {
 		String host = "localhost";
-		int port = 50054;
+		//int port = 50054;
 		
 		
 		//To do the link 
-		ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
+		ManagedChannel channel = ManagedChannelBuilder.forAddress(host, 50054).usePlaintext().build();
 	
 		LogiHubServiceBlockingStub blockingstub = LogiHubServiceGrpc.newBlockingStub(channel);
 		

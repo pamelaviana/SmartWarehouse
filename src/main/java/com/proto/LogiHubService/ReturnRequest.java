@@ -5,7 +5,7 @@ package com.proto.LogiHubService;
 
 /**
  * <pre>
- *ReturnOrder
+ *ReturnOrder- Unaryrpc
  * </pre>
  *
  * Protobuf type {@code logi_hub.ReturnRequest}
@@ -378,7 +378,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   *ReturnOrder
+   *ReturnOrder- Unaryrpc
    * </pre>
    *
    * Protobuf type {@code logi_hub.ReturnRequest}

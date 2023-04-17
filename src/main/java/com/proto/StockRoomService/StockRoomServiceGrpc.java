@@ -30,28 +30,28 @@ public final class StockRoomServiceGrpc {
   public static final String SERVICE_NAME = "com.proto.StockRoomService.StockRoomService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequest,
+  private static volatile io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequestt,
       com.proto.StockRoomService.ReadyResponse> getReadyOrderMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "readyOrder",
-      requestType = com.proto.StockRoomService.OrderRequest.class,
+      requestType = com.proto.StockRoomService.OrderRequestt.class,
       responseType = com.proto.StockRoomService.ReadyResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequest,
+  public static io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequestt,
       com.proto.StockRoomService.ReadyResponse> getReadyOrderMethod() {
-    io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequest, com.proto.StockRoomService.ReadyResponse> getReadyOrderMethod;
+    io.grpc.MethodDescriptor<com.proto.StockRoomService.OrderRequestt, com.proto.StockRoomService.ReadyResponse> getReadyOrderMethod;
     if ((getReadyOrderMethod = StockRoomServiceGrpc.getReadyOrderMethod) == null) {
       synchronized (StockRoomServiceGrpc.class) {
         if ((getReadyOrderMethod = StockRoomServiceGrpc.getReadyOrderMethod) == null) {
           StockRoomServiceGrpc.getReadyOrderMethod = getReadyOrderMethod = 
-              io.grpc.MethodDescriptor.<com.proto.StockRoomService.OrderRequest, com.proto.StockRoomService.ReadyResponse>newBuilder()
+              io.grpc.MethodDescriptor.<com.proto.StockRoomService.OrderRequestt, com.proto.StockRoomService.ReadyResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "com.proto.StockRoomService.StockRoomService", "readyOrder"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.proto.StockRoomService.OrderRequest.getDefaultInstance()))
+                  com.proto.StockRoomService.OrderRequestt.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.proto.StockRoomService.ReadyResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new StockRoomServiceMethodDescriptorSupplier("readyOrder"))
@@ -158,7 +158,7 @@ public final class StockRoomServiceGrpc {
 
     /**
      */
-    public void readyOrder(com.proto.StockRoomService.OrderRequest request,
+    public void readyOrder(com.proto.StockRoomService.OrderRequestt request,
         io.grpc.stub.StreamObserver<com.proto.StockRoomService.ReadyResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getReadyOrderMethod(), responseObserver);
     }
@@ -183,7 +183,7 @@ public final class StockRoomServiceGrpc {
             getReadyOrderMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                com.proto.StockRoomService.OrderRequest,
+                com.proto.StockRoomService.OrderRequestt,
                 com.proto.StockRoomService.ReadyResponse>(
                   this, METHODID_READY_ORDER)))
           .addMethod(
@@ -227,7 +227,7 @@ public final class StockRoomServiceGrpc {
 
     /**
      */
-    public void readyOrder(com.proto.StockRoomService.OrderRequest request,
+    public void readyOrder(com.proto.StockRoomService.OrderRequestt request,
         io.grpc.stub.StreamObserver<com.proto.StockRoomService.ReadyResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getReadyOrderMethod(), getCallOptions()), request, responseObserver);
@@ -273,7 +273,7 @@ public final class StockRoomServiceGrpc {
 
     /**
      */
-    public com.proto.StockRoomService.ReadyResponse readyOrder(com.proto.StockRoomService.OrderRequest request) {
+    public com.proto.StockRoomService.ReadyResponse readyOrder(com.proto.StockRoomService.OrderRequestt request) {
       return blockingUnaryCall(
           getChannel(), getReadyOrderMethod(), getCallOptions(), request);
     }
@@ -318,7 +318,7 @@ public final class StockRoomServiceGrpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<com.proto.StockRoomService.ReadyResponse> readyOrder(
-        com.proto.StockRoomService.OrderRequest request) {
+        com.proto.StockRoomService.OrderRequestt request) {
       return futureUnaryCall(
           getChannel().newCall(getReadyOrderMethod(), getCallOptions()), request);
     }
@@ -354,7 +354,7 @@ public final class StockRoomServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_READY_ORDER:
-          serviceImpl.readyOrder((com.proto.StockRoomService.OrderRequest) request,
+          serviceImpl.readyOrder((com.proto.StockRoomService.OrderRequestt) request,
               (io.grpc.stub.StreamObserver<com.proto.StockRoomService.ReadyResponse>) responseObserver);
           break;
         case METHODID_STOCK_SUPPLY:

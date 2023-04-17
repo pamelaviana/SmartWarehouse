@@ -16,6 +16,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
+ * <pre>
+ *Service Definition
+ * </pre>
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.15.0)",
@@ -147,6 +150,9 @@ public final class LogiHubServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Service Definition
+   * </pre>
    */
   public static abstract class LogiHubServiceImplBase implements io.grpc.BindableService {
 
@@ -208,6 +214,9 @@ public final class LogiHubServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Service Definition
+   * </pre>
    */
   public static final class LogiHubServiceStub extends io.grpc.stub.AbstractStub<LogiHubServiceStub> {
     private LogiHubServiceStub(io.grpc.Channel channel) {
@@ -260,6 +269,9 @@ public final class LogiHubServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Service Definition
+   * </pre>
    */
   public static final class LogiHubServiceBlockingStub extends io.grpc.stub.AbstractStub<LogiHubServiceBlockingStub> {
     private LogiHubServiceBlockingStub(io.grpc.Channel channel) {
@@ -309,6 +321,9 @@ public final class LogiHubServiceGrpc {
   }
 
   /**
+   * <pre>
+   *Service Definition
+   * </pre>
    */
   public static final class LogiHubServiceFutureStub extends io.grpc.stub.AbstractStub<LogiHubServiceFutureStub> {
     private LogiHubServiceFutureStub(io.grpc.Channel channel) {

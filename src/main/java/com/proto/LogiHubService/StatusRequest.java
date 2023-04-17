@@ -6,6 +6,7 @@ package com.proto.LogiHubService;
 /**
  * <pre>
  *declare the message---All message are Unary rpc.
+ *DeliveryStatus- Unar rpc
  * </pre>
  *
  * Protobuf type {@code logi_hub.StatusRequest}
@@ -379,6 +380,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    *declare the message---All message are Unary rpc.
+   *DeliveryStatus- Unar rpc
    * </pre>
    *
    * Protobuf type {@code logi_hub.StatusRequest}
