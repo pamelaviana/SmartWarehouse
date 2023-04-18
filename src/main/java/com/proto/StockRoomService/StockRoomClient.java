@@ -74,8 +74,8 @@ public class StockRoomClient {
 
 			// prints out the result of the stockSupply() operation. It concatenates a
 			// string that includes the result and mysupply fields of the response object.
-			System.out.println("\n\nCheking quantity of Losartana after insert 220units into stock => "
-					+ response.getResult() + " units into stock \n" + response.getMysupply());
+			System.out.println("\n\nCheking quantity of Losartana into stock => "
+					+ response.getResult() + " units \n" + response.getMysupply());
 		} catch (StatusRuntimeException ex) {
 			ex.printStackTrace();
 		}

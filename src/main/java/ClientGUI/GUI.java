@@ -156,8 +156,8 @@ public class GUI implements ActionListener {
 
             // prints out the result of the stockSupply() operation. It concatenates a
             // string that includes the result and mysupply fields of the response object.
-            textResponse.append("Cheking quantity of Losartana after insert 220units into stock => "
-                    + response.getResult() + " units into stock \n" + response.getMysupply());
+            textResponse.append("Cheking quantity of Losartana into stock => "
+                    + response.getResult() + " units  \n" + response.getMysupply());
         } catch (Exception e) {
             // Show alert with error message
             JOptionPane.showMessageDialog(null, "Error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
