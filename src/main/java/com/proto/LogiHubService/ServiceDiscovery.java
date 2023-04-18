@@ -1,4 +1,4 @@
-package com.proto.LogiHubService;
+/*package com.proto.LogiHubService;
 
 import java.io.IOException;
 
@@ -120,4 +120,4 @@ import javax.jmdns.ServiceListener;
     	    }
 
 
-    	}
+    	}*/
