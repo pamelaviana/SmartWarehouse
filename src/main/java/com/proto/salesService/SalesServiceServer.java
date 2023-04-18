@@ -92,7 +92,7 @@ public class SalesServiceServer extends SalesServiceImplBase {
 			Thread.sleep(1000);
 
 			// Unregister all services
-			jmdns.unregisterAllServices();
+			// jmdns.unregisterAllServices();
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
