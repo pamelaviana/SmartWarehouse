@@ -1,6 +1,6 @@
 # Smart Warehouse
 
-The Smart Warehousing project is aimed at providing online stores with an efficient solution for tracking orders and controlling stock.
+The Smart Warehouse project is aimed at providing online stores with an efficient solution for tracking orders and controlling stock.
 By automating these processes, the project ensures timely delivery updates and better organization of the warehouse.
 To achieve this, three interconnected services have been designed: Sale service, Stock Room service, and LogiHub service. 
 These services communicate via gRPC and incorporate various features to streamline the entire process. 
